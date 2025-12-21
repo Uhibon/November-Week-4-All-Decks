@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>The Boo-riculum – December Week 2</title>
+<title>The All New Booha Adventure Starts next week</title>
 <meta name="theme-color" content="#b91c1c">
 <link rel="icon" type="image/png" href="booha-ghost.png">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&display=swap" rel="stylesheet" />
@@ -14,11 +14,10 @@
 html,body{
   height:100%;
   font-family:system-ui,Segoe UI,Roboto,Inter,sans-serif;
-  /* cozy dark winter background */
   background:radial-gradient(circle at top,#1f2937 0,#020617 55%,#000 100%);
   display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
   color:#f9fafb;
-  padding-bottom:70px; /* pushes buttons up */
+  padding-bottom:70px;
 }
 
 /* ---------- HEADER ---------- */
@@ -26,27 +25,34 @@ header{
   text-align:center;
   margin-top:30px;
   margin-bottom:20px;
+  padding:0 14px;
 }
 header h1{
   font-family:'Cinzel',serif;
-  font-size:clamp(26px,4.5vw,50px);
+  font-size:clamp(24px,4.2vw,48px);
   margin-bottom:10px;
   font-weight:900;
-  letter-spacing:2px;
-  color:#fee2e2; /* soft pink */
+  letter-spacing:1.4px;
+  color:#fee2e2;
   text-shadow:0 0 10px rgba(248,250,252,.7);
 }
 header h2{
-  font-size:clamp(22px,3.5vw,36px);
+  font-size:clamp(18px,3.2vw,30px);
   margin-bottom:6px;
-  font-weight:800;
-  color:#fde68a; /* warm gold */
+  font-weight:900;
+  color:#fde68a;
   text-shadow:0 0 8px rgba(234,179,8,.6);
 }
 header h3{
-  font-size:clamp(18px,3vw,30px);
-  font-weight:600;
-  color:#bfdbfe; /* icy blue */
+  font-size:clamp(16px,2.7vw,24px);
+  font-weight:700;
+  color:#bfdbfe;
+}
+header .sub{
+  margin-top:10px;
+  font-size:clamp(14px,2.2vw,18px);
+  color:rgba(248,250,252,.92);
+  line-height:1.35;
 }
 
 /* ---------- CARD ---------- */
@@ -64,12 +70,12 @@ header h3{
   border:3px solid rgba(248,250,252,.3);
   box-shadow:0 18px 40px rgba(15,23,42,.85);
   overflow:hidden;
-  background:#fefce8; /* light by default, overwritten by JS colors */
+  background:#fefce8;
   display:flex;
   align-items:center;
   justify-content:center;
   position:relative;
-  color:#111; /* text inside card stays dark */
+  color:#111;
 }
 .face{
   position:absolute;
@@ -87,19 +93,19 @@ header h3{
 .face.visible{opacity:1;transform:scale(1);}
 .term h2{
   margin:0;
-  font-size:clamp(40px,8vw,90px);
+  font-size:clamp(34px,7.4vw,84px);
   font-weight:900;
   line-height:1.1;
 }
 .term p{
   margin-top:.7rem;
-  font-size:clamp(26px,4vw,42px);
-  font-weight:700;
+  font-size:clamp(22px,3.8vw,38px);
+  font-weight:800;
 }
 .term small{
-  margin-top:.3rem;
-  font-size:clamp(20px,3vw,30px);
-  font-weight:600;
+  margin-top:.35rem;
+  font-size:clamp(18px,2.9vw,28px);
+  font-weight:700;
   color:#333;
 }
 
@@ -117,7 +123,7 @@ header h3{
   border:none;
   border-radius:999px;
   cursor:pointer;
-  font-weight:700;
+  font-weight:800;
   background:rgba(15,23,42,.8);
   color:#e5e7eb;
   box-shadow:0 6px 16px rgba(15,23,42,.7);
@@ -144,7 +150,7 @@ button.btn{
   border:none;
   background:linear-gradient(135deg,#fecaca,#bbf7d0);
   box-shadow:0 10px 25px rgba(15,23,42,.7);
-  font-weight:800;
+  font-weight:900;
   cursor:pointer;
   font-size:1.05rem;
   color:#111827;
@@ -154,28 +160,18 @@ button.btn:active{
   transform:translateY(2px);
   box-shadow:0 5px 16px rgba(15,23,42,.8);
 }
-
-/* ---------- FOOTER ---------- */
-footer{
-  position:fixed;
-  bottom:18px;
-  left:0;
-  width:100%;
-  text-align:center;
-  color:#e5e7eb;
-  font-family:'Cinzel',serif;
-  font-size:clamp(14px,2vw,18px);
-  letter-spacing:1px;
-  opacity:.9;
-}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>The Boo-riculum</h1>
-  <h2>December Week 2</h2>
-  <h3>12月第2週</h3>
+  <h1>The All New Booha Adventure Starts next week</h1>
+  <h2>End-of-Year Review</h2>
+  <h3>年末ふりかえり</h3>
+  <div class="sub">
+    Review the key words, sentences, and questions from this year.<br/>
+    Next week: <b>Booha Adventure</b> begins.
+  </div>
 </header>
 
 <div class="modes">
@@ -204,144 +200,146 @@ footer{
   <button class="btn" id="nextBtn">Next ❯</button>
 </div>
 
-<footer>Bryan's English School</footer>
-
 <script>
-/* Soft, light Christmas colors for the card backgrounds */
+/* Soft, light winter colors for the card backgrounds */
 const COLORS=[
-  "#ffe5ec", // frosty pink
-  "#fef3c7", // warm gold
-  "#dcfce7", // mint green
-  "#e0f2fe", // icy blue
-  "#fde68a", // soft yellow
-  "#f9a8d4", // candy pink
-  "#bbf7d0", // light green
-  "#fecaca", // light red
-  "#fef9c3", // cream
-  "#bae6fd"  // pale blue
+  "#ffe5ec",
+  "#fef3c7",
+  "#dcfce7",
+  "#e0f2fe",
+  "#fde68a",
+  "#f9a8d4",
+  "#bbf7d0",
+  "#fecaca",
+  "#fef9c3",
+  "#bae6fd"
 ];
 
-/* -------------------- DECEMBER WEEK 2 VOCAB (10) -------------------- */
-/* fireplace, blanket, mittens, snowflake, gift bag, surprise,
-   celebrate, family dinner, vacation plan, year-end party */
+/* =========================
+   END-OF-YEAR REVIEW VOCAB (10)
+   ========================= */
 const CARDS=[
-  {en:"fireplace",   jp:"暖炉",         kana:"だんろ"},
-  {en:"blanket",     jp:"毛布",         kana:"もうふ"},
-  {en:"mittens",     jp:"手ぶくろ",     kana:"てぶくろ"},
-  {en:"snowflake",   jp:"雪の結晶",     kana:"ゆき の けっしょう"},
-  {en:"gift bag",    jp:"ギフトバッグ", kana:"ぎふとばっぐ"},
-  {en:"surprise",    jp:"サプライズ",   kana:"さぷらいず"},
-  {en:"celebrate",   jp:"祝う",         kana:"いわう"},
-  {en:"family dinner", jp:"家族の夕食",   kana:"かぞく の ゆうしょく"},
-  {en:"vacation plan", jp:"旅行計画",     kana:"りょこうけいかく"},
-  {en:"year-end party", jp:"忘年会",      kana:"ぼうねんかい"}
+  {en:"goal",        jp:"目標",           kana:"もくひょう"},
+  {en:"practice",    jp:"れんしゅう",     kana:"れんしゅう"},
+  {en:"improve",     jp:"上達する",       kana:"じょうたつ する"},
+  {en:"challenge",   jp:"ちょうせん",     kana:"ちょうせん"},
+  {en:"effort",      jp:"努力",           kana:"どりょく"},
+  {en:"routine",     jp:"習慣",           kana:"しゅうかん"},
+  {en:"proud",       jp:"誇らしい",       kana:"ほこらしい"},
+  {en:"mistake",     jp:"まちがい",       kana:"まちがい"},
+  {en:"try again",   jp:"もう一回やってみる", kana:"もう いっかい やってみる"},
+  {en:"next week",   jp:"来週",           kana:"らいしゅう"}
 ];
 
-/* -------------------- DECEMBER WEEK 2 SENTENCES (10) -------------------- */
+/* =========================
+   END-OF-YEAR REVIEW SENTENCES (10)
+   ========================= */
 const SENTENCES=[
   {
-    en:"There is a warm fireplace in the living room.",
-    jp:"リビングルームにはあたたかい暖炉があります。",
-    kana:"りびんぐるーむ には あたたかい だんろ が あります"
+    en:"My goal this year is to speak more English.",
+    jp:"今年の目標は、もっと英語を話すことです。",
+    kana:"ことし の もくひょう は もっと えいご を はなす こと です"
   },
   {
-    en:"On cold December nights, I sleep with a blanket.",
-    jp:"さむい12月のよる、私は毛布をかけてねます。",
-    kana:"さむい じゅうにがつ の よる わたし は もうふ を かけて ねます"
+    en:"I practice English every week.",
+    jp:"私は毎週英語をれんしゅうします。",
+    kana:"わたし は まいしゅう えいご を れんしゅう します"
   },
   {
-    en:"I wear mittens when I play in the snow.",
-    jp:"ゆきであそぶとき、私はミトンをつけます。",
-    kana:"ゆき で あそぶ とき わたし は みとん を つけます"
+    en:"I want to improve my pronunciation.",
+    jp:"発音を上達させたいです。",
+    kana:"はつおん を じょうたつ させたい です"
   },
   {
-    en:"A snowflake falls softly from the sky.",
-    jp:"雪の結晶がそらからやさしくおちてきます。",
-    kana:"ゆき の けっしょう が そら から やさしく おちて きます"
+    en:"This year, I tried a new challenge.",
+    jp:"今年、私は新しいちょうせんをしました。",
+    kana:"ことし わたし は あたらしい ちょうせん を しました"
   },
   {
-    en:"I put the present in a gift bag.",
-    jp:"プレゼントをギフトバッグにいれます。",
-    kana:"ぷれぜんと を ぎふとばっぐ に いれます"
+    en:"My effort helped me get better.",
+    jp:"努力のおかげで上手になりました。",
+    kana:"どりょく の おかげ で じょうず に なりました"
   },
   {
-    en:"The surprise party is on December 24th.",
-    jp:"サプライズパーティーは12月24日にあります。",
-    kana:"さぷらいず ぱーてぃー は じゅうにがつ にじゅうよっか に あります"
+    en:"My English routine is short but strong.",
+    jp:"私の英語の習慣は短いけどつよいです。",
+    kana:"わたし の えいご の しゅうかん は みじかい けど つよい です"
   },
   {
-    en:"We celebrate the holiday with music and lights.",
-    jp:"私たちはおんがくとライトでホリデーをいわいます。",
-    kana:"わたしたち は おんがく と らいと で ほりでー を いわいます"
+    en:"I am proud of my progress this year.",
+    jp:"今年の成長をほこりに思います。",
+    kana:"ことし の せいちょう を ほこり に おもいます"
   },
   {
-    en:"Our family dinner is on a Sunday evening in December.",
-    jp:"12月のにちようびのよるに、私たちの家族の夕食があります。",
-    kana:"じゅうにがつ の にちようび の よる に わたしたち の かぞく の ゆうしょく が あります"
+    en:"Mistakes are okay. They help us learn.",
+    jp:"まちがいは大丈夫です。学ぶために大切です。",
+    kana:"まちがい は だいじょうぶ です まなぶ ため に たいせつ です"
   },
   {
-    en:"We talk about our vacation plan for winter break.",
-    jp:"私たちはウィンターブレイクの旅行計画についてはなします。",
-    kana:"わたしたち は うぃんたーぶれいく の りょこうけいかく について はなします"
+    en:"If I make a mistake, I try again.",
+    jp:"まちがいをしたら、もう一回やってみます。",
+    kana:"まちがい を したら もう いっかい やってみます"
   },
   {
-    en:"There is a year-end party at my father's office.",
-    jp:"父の会社で忘年会があります。",
-    kana:"ちち の かいしゃ で ぼうねんかい が あります"
+    en:"Next week, the Booha Adventure starts.",
+    jp:"来週、ブーハー・アドベンチャーが始まります。",
+    kana:"らいしゅう ぶーはー あどべんちゃー が はじまります"
   }
 ];
 
-/* -------------------- DECEMBER QUESTIONS (10, UNRELATED BUT XMAS/DEC THEME) -------------------- */
+/* =========================
+   END-OF-YEAR REVIEW QUESTIONS (10)
+   ========================= */
 const QUESTIONS=[
   {
-    en:"Do you like December?",
-    jp:"あなたは12月がすきですか？",
-    kana:"あなた は じゅうにがつ が すき です か"
+    en:"What was your best English moment this year?",
+    jp:"今年いちばんよかった英語の瞬間は何ですか？",
+    kana:"ことし いちばん よかった えいご の しゅんかん は なに です か"
   },
   {
-    en:"What do you want for Christmas?",
-    jp:"クリスマスに何がほしいですか？",
-    kana:"くりすます に なに が ほしい です か"
+    en:"What English word do you use the most?",
+    jp:"いちばんよく使う英語の単語は何ですか？",
+    kana:"いちばん よく つかう えいご の たんご は なに です か"
   },
   {
-    en:"Do you make a snowman in winter?",
-    jp:"冬にゆきだるまをつくりますか？",
-    kana:"ふゆ に ゆきだるま を つくります か"
+    en:"What do you want to improve next year?",
+    jp:"来年、何を上達させたいですか？",
+    kana:"らいねん なに を じょうたつ させたい です か"
   },
   {
-    en:"What color is your Christmas tree?",
-    jp:"あなたのクリスマスツリーは何色ですか？",
-    kana:"あなた の くりすますつりー は なにいろ です か"
+    en:"What was difficult for you this year?",
+    jp:"今年、むずかしかったことは何ですか？",
+    kana:"ことし むずかしかった こと は なに です か"
   },
   {
-    en:"Do you eat cake on Christmas?",
-    jp:"クリスマスにケーキをたべますか？",
-    kana:"くりすます に けーき を たべます か"
+    en:"What do you do when you make a mistake in English?",
+    jp:"英語でまちがいをしたとき、どうしますか？",
+    kana:"えいご で まちがい を した とき どう します か"
   },
   {
-    en:"Who do you spend Christmas with?",
-    jp:"クリスマスをだれとすごしますか？",
-    kana:"くりすます を だれ と すごします か"
+    en:"Do you practice English at home?",
+    jp:"家で英語をれんしゅうしますか？",
+    kana:"いえ で えいご を れんしゅう します か"
   },
   {
-    en:"Do you like winter break from school?",
-    jp:"学校のウィンターブレイクはすきですか？",
-    kana:"がっこう の うぃんたーぶれいく は すき です か"
+    en:"What is one challenge you want to try next year?",
+    jp:"来年やってみたいちょうせんは何ですか？",
+    kana:"らいねん やってみたい ちょうせん は なに です か"
   },
   {
-    en:"What do you do on New Year's Eve?",
-    jp:"おおみそかに何をしますか？",
-    kana:"おおみそか に なに を します か"
+    en:"What are you proud of this year?",
+    jp:"今年、何をほこりに思いますか？",
+    kana:"ことし なに を ほこり に おもいます か"
   },
   {
-    en:"Do you watch Christmas movies?",
-    jp:"クリスマスのえいがを見ますか？",
-    kana:"くりすます の えいが を みます か"
+    en:"How can English help you in the future?",
+    jp:"英語は将来にどう役立ちますか？",
+    kana:"えいご は しょうらい に どう やくだちます か"
   },
   {
-    en:"Do you send cards to your friends in December?",
-    jp:"12月に友だちにカードをおくりますか？",
-    kana:"じゅうにがつ に ともだち に かーど を おくります か"
+    en:"Are you excited for the Booha Adventure next week?",
+    jp:"来週のブーハー・アドベンチャー、楽しみですか？",
+    kana:"らいしゅう の ぶーはー あどべんちゃー たのしみ です か"
   }
 ];
 
@@ -359,6 +357,7 @@ function show(){
   frontTitle.textContent=c.en;
   backTitle.textContent=c.jp;
   backKana.textContent=c.kana;
+
   if(showBack){
     frontFace.classList.replace("visible","hidden");
     backFace.classList.replace("hidden","visible");
